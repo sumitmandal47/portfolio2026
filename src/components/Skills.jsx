@@ -14,9 +14,10 @@ const skillCategories = [
     bgColor: 'bg-accent-cyan/10',
     skills: [
       { name: 'React 19 / JSX', level: 95 },
+      { name: 'NextJS', level: 80 },
       { name: 'JavaScript (ES6+)', level: 90 },
-      { name: 'TypeScript', level: 85 },
-      { name: 'HTML5 & CSS3', level: 95 }
+      { name: 'TypeScript', level: 75 },
+      { name: 'HTML5 & CSS 2', level: 95 }
     ]
   },
   {
@@ -25,7 +26,7 @@ const skillCategories = [
     color: 'text-accent-pink',
     bgColor: 'bg-accent-pink/10',
     skills: [
-      { name: 'Tailwind CSS 4', level: 95 },
+      { name: 'Tailwind CSS ', level: 95 },
       { name: 'GSAP Animations', level: 85 },
       { name: 'Framer Motion', level: 90 },
       { name: 'Responsive Web Design', level: 95 }
@@ -39,8 +40,8 @@ const skillCategories = [
     skills: [
       { name: 'Node.js & Express', level: 80 },
       { name: 'RESTful API Design', level: 85 },
-      { name: 'GraphQL Schema', level: 70 },
-      { name: 'Database (MongoDB/SQL)', level: 75 }
+      { name: 'PostgreSQL', level: 70 },
+      { name: 'mongoDB', level: 80 },
     ]
   },
   {
@@ -63,11 +64,11 @@ export default function Skills() {
   useGSAP(() => {
     // Animate skill progress bars from width 0 to actual value when scrolling into view
     const progressBars = gsap.utils.toArray('.skill-progress-bar');
-    
+
     progressBars.forEach((bar) => {
       const targetWidth = bar.getAttribute('data-level') + '%';
-      
-      gsap.fromTo(bar, 
+
+      gsap.fromTo(bar,
         { width: '0%' },
         {
           width: targetWidth,
@@ -100,11 +101,9 @@ export default function Skills() {
 
   return (
     <section id="skills" ref={sectionRef} className="py-20 md:py-28 relative overflow-hidden bg-bg-darker/30">
-      {/* Decorative Blob */}
       <div className="absolute top-[40%] left-[-10%] w-[350px] h-[350px] bg-accent-cyan/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6">
-        {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
             Technical <span className="text-gradient">Proficiencies</span>
@@ -112,7 +111,6 @@ export default function Skills() {
           <div className="w-16 h-1 bg-gradient-to-r from-accent-cyan to-accent-violet mx-auto rounded-full" />
         </div>
 
-        {/* Skills Grid */}
         <div className="skills-grid-container grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
@@ -121,7 +119,6 @@ export default function Skills() {
                 key={index}
                 className="skill-category-card glass-panel p-6 md:p-8 rounded-3xl border border-white/5 hover:border-white/10 transition-all duration-300 relative group"
               >
-                {/* Heading Icon */}
                 <div className="flex items-center space-x-4 mb-6">
                   <div className={`p-3 rounded-2xl ${category.bgColor} ${category.color}`}>
                     <IconComponent className="w-6 h-6" />
@@ -131,7 +128,6 @@ export default function Skills() {
                   </h3>
                 </div>
 
-                {/* Skills progress list */}
                 <div className="space-y-5">
                   {category.skills.map((skill, sIdx) => (
                     <div key={sIdx} className="space-y-2">
@@ -139,13 +135,12 @@ export default function Skills() {
                         <span className="font-medium text-slate-300">{skill.name}</span>
                         <span className="text-xs font-mono text-slate-400 font-semibold">{skill.level}%</span>
                       </div>
-                      
-                      {/* Progress bar container */}
+
                       <div className="h-2 w-full bg-slate-900 rounded-full overflow-hidden border border-white/5">
                         <div
                           className="skill-progress-bar h-full rounded-full bg-gradient-to-r from-accent-cyan to-accent-violet"
                           data-level={skill.level}
-                          style={{ width: '0%' }} // Initial width set to 0% for GSAP animation
+                          style={{ width: '0%' }}
                         />
                       </div>
                     </div>

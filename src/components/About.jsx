@@ -3,32 +3,31 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Briefcase, GraduationCap, Download, Heart, Users, ShieldAlert, Award } from 'lucide-react';
-import { motion } from 'framer-motion';
 
-// Register GSAP ScrollTrigger
+
 gsap.registerPlugin(ScrollTrigger);
 
 const timelineData = [
   {
     type: 'experience',
-    year: '2024 - Present',
-    title: 'Frontend Engineer',
-    company: 'Innovate Tech Labs',
+    year: '2025 - Present',
+    title: 'Fullstack Developer',
+    company: 'Danimai pvt. ltd.',
     desc: 'Led migration to React 19 and Vite. Developed reusable component libraries, optimized bundle sizes by 30%, and incorporated micro-animations using GSAP to boost user metrics.'
   },
   {
     type: 'experience',
-    year: '2022 - 2024',
-    title: 'Junior Web Developer',
-    company: 'Core Solutions',
+    year: '2024 - 2025',
+    title: 'Frontend Developer',
+    company: 'Danimai pvt. ltd.',
     desc: 'Collaborated on client projects building responsive web applications. Crafted custom interactive UI components and integrated RESTful services using state management systems.'
   },
   {
     type: 'education',
-    year: '2019 - 2022',
-    title: 'B.Sc. Computer Science',
-    company: 'Delhi University',
-    desc: 'Graduated with Honors. Focused on object-oriented programming, data structures, algorithms, database management systems, and core web engineering technologies.'
+    year: '2021 - 2025',
+    title: 'Bachelor of Computer Science',
+    company: 'scope college of engineering, bhopal',
+    desc: 'Graduated with Honors.'
   }
 ];
 
@@ -88,13 +87,13 @@ export default function About() {
           <div className="lg:col-span-6 flex flex-col space-y-6 text-left about-text-reveal">
             <h3 className="text-2xl font-bold text-white">Who is Sumit?</h3>
             <p className="text-slate-300 leading-relaxed">
-              I am a passionate frontend developer dedicated to designing and programming engaging web systems. 
-              My expertise centers around the modern JavaScript/TypeScript ecosystem, particularly React, Vite, 
+              I am a passionate frontend developer dedicated to designing and programming engaging web systems.
+              My expertise centers around the modern JavaScript/TypeScript ecosystem, particularly React, Vite,
               Tailwind CSS, and animation suites like GSAP and Framer Motion.
             </p>
             <p className="text-slate-350 leading-relaxed">
-              I believe that website user interfaces should be responsive, performant, and visual narratives. 
-              By combining strict grid architectures with fluid micro-interactions, I engineer platforms 
+              I believe that website user interfaces should be responsive, performant, and visual narratives.
+              By combining strict grid architectures with fluid micro-interactions, I engineer platforms
               that leave long-lasting positive impressions.
             </p>
 
@@ -112,7 +111,6 @@ export default function About() {
               </div>
             </div>
 
-            {/* Resume Button */}
             <div className="pt-4">
               <a
                 href="#contact"
@@ -124,13 +122,12 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Column: Timeline */}
           <div className="lg:col-span-6 timeline-container text-left">
             <h3 className="text-2xl font-bold text-white mb-8 pl-4">Education & Work Experience</h3>
             <div className="relative border-l border-slate-800 ml-4 pl-8 space-y-8">
               {timelineData.map((item, idx) => (
                 <div key={idx} className="timeline-card relative">
-                  {/* Timeline Node dot indicator */}
+
                   <span className="absolute -left-[41px] top-1 bg-[#070a13] p-1 rounded-full border border-slate-800">
                     {item.type === 'experience' ? (
                       <Briefcase className="w-4 h-4 text-accent-cyan" />

@@ -11,7 +11,7 @@ export default function Hero() {
   const buttonRef = useRef(null);
 
   useGSAP(() => {
-    // Reveal text character by character or word by word
+
     const tl = gsap.timeline();
 
     tl.fromTo(
@@ -27,7 +27,7 @@ export default function Hero() {
       '-=1.2'
     );
 
-    // Subtle breathing animation for background blobs
+
     gsap.to('.blob-1', {
       x: 30,
       y: -30,
@@ -73,7 +73,7 @@ export default function Hero() {
       <div className="glow-blob blob-2 absolute bottom-[10%] right-[5%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-accent-cyan rounded-full blur-[130px]" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* Left column: Text details */}
+
         <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6">
           <div className="reveal-element inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-accent-cyan text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5" />
@@ -87,7 +87,7 @@ export default function Hero() {
           </h1>
 
           <p className="reveal-element text-base sm:text-lg md:text-xl text-slate-300 max-w-xl font-normal leading-relaxed">
-            I am Sumit, a frontend specialist who shapes dynamic, performance-first interfaces. 
+            I am Sumit, a frontend specialist who shapes dynamic, performance-first interfaces.
             Blending technical engineering with interactive design principles to tell compelling product stories.
           </p>
 
@@ -100,9 +100,9 @@ export default function Hero() {
               <span>Explore My Work</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
-            
+
             <a
-              href="#contact"
+              href="/contact"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -113,24 +113,21 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Quick stats */}
           <div className="reveal-element grid grid-cols-3 gap-6 md:gap-8 pt-6 border-t border-slate-800/80 w-full max-w-md">
             <div>
-              <p className="text-2xl sm:text-3xl font-bold text-white">3+</p>
+              <p className="text-2xl sm:text-3xl font-bold text-white">2+</p>
               <p className="text-xs text-slate-400 uppercase tracking-wider">Years Experience</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-3xl font-bold text-white">20+</p>
+              <p className="text-2xl sm:text-3xl font-bold text-white">10+</p>
               <p className="text-xs text-slate-400 uppercase tracking-wider">Projects Completed</p>
             </div>
-            <div>
+            {/* <div>
               <p className="text-2xl sm:text-3xl font-bold text-white">99%</p>
               <p className="text-xs text-slate-400 uppercase tracking-wider">Client Satisfaction</p>
-            </div>
+            </div> */}
           </div>
         </div>
-
-        {/* Right column: Interactive Code Window Mockup */}
         <div className="lg:col-span-5 flex justify-center items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
@@ -142,7 +139,6 @@ export default function Hero() {
             dragElastic={0.1}
             className="w-full max-w-[420px] glass-panel rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group cursor-grab active:cursor-grabbing"
           >
-            {/* Window bar */}
             <div className="bg-[#0b0e17] px-4 py-3.5 flex items-center justify-between border-b border-white/5">
               <div className="flex items-center space-x-1.5">
                 <div className="w-3.5 h-3.5 rounded-full bg-red-500/80" />
@@ -153,10 +149,9 @@ export default function Hero() {
                 <Terminal className="w-3.5 h-3.5" />
                 <span>sumit-stats.json</span>
               </div>
-              <div className="w-12 h-2" /> {/* Spacer */}
+              <div className="w-12 h-2" />
             </div>
 
-            {/* Code editor content */}
             <div className="p-5 md:p-6 font-mono text-xs sm:text-sm text-slate-350 leading-relaxed text-left">
               <div className="text-slate-500">// Personal developer identity</div>
               <div className="mt-2">
@@ -170,14 +165,16 @@ export default function Hero() {
               </div>
               <div className="pl-4">
                 <span className="text-sky-400">coreTech</span>: [
-                <span className="text-yellow-400">"React 19"</span>, 
-                <span className="text-yellow-400">"Vite"</span>, 
-                <span className="text-yellow-400">"Tailwind4"</span>
+                <span className="text-yellow-400">"React"</span>,
+                <span className="text-yellow-400">"JavaScript"</span>,
+                <span className="text-yellow-400">"TypeScript"</span>,
+                <span className="text-yellow-400">"Tailwind4"</span>,
+
                 ],
               </div>
               <div className="pl-4">
                 <span className="text-sky-400">animations</span>: [
-                <span className="text-accent-violet">"GSAP"</span>, 
+                <span className="text-accent-violet">"GSAP"</span>,
                 <span className="text-accent-violet">"Framer Motion"</span>
                 ],
               </div>
@@ -185,22 +182,22 @@ export default function Hero() {
                 <span className="text-sky-400">focus</span>: <span className="text-emerald-400">"Stunning UX & Performance"</span>,
               </div>
               <div className="pl-4">
-                <span className="text-sky-400">location</span>: <span className="text-emerald-400">"Delhi, India"</span>,
+                <span className="text-sky-400">location</span>: <span className="text-emerald-400">"Bhopal, Madhya Pradesh"</span>,
               </div>
               <div className="pl-4">
                 <span className="text-sky-400">coffeeLover</span>: <span className="text-amber-500">true</span>
               </div>
               <div>&#125;;</div>
-              
+
               <div className="mt-4 text-slate-500">// Action: Run builder file</div>
               <div className="flex items-center space-x-2 mt-1.5 p-2 rounded bg-slate-900/60 border border-white/5">
                 <Code className="w-3.5 h-3.5 text-accent-cyan" />
-                <span className="text-[11px] text-slate-400">yarn start --portfolio-platform</span>
+                <span className="text-[11px] text-slate-400">bun start --portfolio-platform</span>
                 <span className="w-2 h-4 bg-accent-cyan animate-pulse inline-block" />
               </div>
             </div>
-            
-            {/* Absolute element overlays */}
+
+
             <div className="absolute right-3 bottom-3 opacity-30 group-hover:opacity-100 transition-opacity duration-300">
               <div className="w-7 h-7 rounded bg-white/5 border border-white/10 flex items-center justify-center text-slate-450 hover:text-white">
                 <Play className="w-3 h-3 fill-current" />

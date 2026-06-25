@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, Github, Linkedin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navigationLinks = [
@@ -46,7 +46,7 @@ export default function Navbar() {
     const id = href.replace('#', '');
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; // height of floating header approx
+      const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -64,11 +64,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-6xl rounded-2xl transition-all duration-300 ${
-          isScrolled || isMobileMenuOpen
-            ? 'glass-nav py-3 shadow-lg'
-            : 'bg-transparent py-5 border-b border-transparent'
-        }`}
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-6xl rounded-2xl transition-all duration-300 ${isScrolled || isMobileMenuOpen
+          ? 'glass-nav py-3 shadow-lg'
+          : 'bg-transparent py-5 border-b border-transparent'
+          }`}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           {/* Logo */}
@@ -83,7 +82,7 @@ export default function Navbar() {
             <span className="hidden sm:inline">Sumit</span>
           </a>
 
-          {/* Desktop Nav Items */}
+
           <nav className="hidden md:flex items-center space-x-1 bg-white/5 rounded-full p-1 border border-white/5">
             {navigationLinks.map((link) => {
               const isActive = activeSection === link.href.replace('#', '');
@@ -92,9 +91,8 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                    isActive ? 'text-white' : 'text-slate-400 hover:text-slate-200'
-                  }`}
+                  className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${isActive ? 'text-white' : 'text-slate-400 hover:text-slate-200'
+                    }`}
                 >
                   {isActive && (
                     <motion.span
@@ -109,10 +107,10 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Socials & Call-to-action */}
+
           <div className="hidden md:flex items-center space-x-3">
             <a
-              href="https://github.com"
+              href="https://github.com/sumitmandal47"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-slate-800/40 hover:bg-slate-850 border border-slate-700/50 text-slate-300 hover:text-white transition-all hover:scale-105"
@@ -121,7 +119,7 @@ export default function Navbar() {
               <Github className="w-4 h-4" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="linkedin.com/in/sumit-mandal47"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-slate-800/40 hover:bg-slate-850 border border-slate-700/50 text-slate-300 hover:text-white transition-all hover:scale-105"
@@ -138,7 +136,6 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 rounded-lg text-slate-450 hover:text-white focus:outline-none hover:bg-white/5 border border-white/5 transition-colors"
@@ -149,7 +146,6 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Navigation Dropdown Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -167,11 +163,10 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
-                    className={`px-4 py-2.5 rounded-xl text-base font-medium transition-all ${
-                      isActive
-                        ? 'bg-gradient-to-r from-accent-cyan/15 to-accent-violet/15 text-white border-l-2 border-accent-cyan pl-6'
-                        : 'text-slate-450 hover:text-white hover:bg-white/5'
-                    }`}
+                    className={`px-4 py-2.5 rounded-xl text-base font-medium transition-all ${isActive
+                      ? 'bg-gradient-to-r from-accent-cyan/15 to-accent-violet/15 text-white border-l-2 border-accent-cyan pl-6'
+                      : 'text-slate-450 hover:text-white hover:bg-white/5'
+                      }`}
                   >
                     {link.name}
                   </a>
@@ -183,7 +178,7 @@ export default function Navbar() {
               <div className="flex items-center justify-between pt-2 px-2">
                 <div className="flex items-center space-x-3">
                   <a
-                    href="https://github.com"
+                    href="https://github.com/sumitmandal47"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 text-slate-350 hover:text-white"
@@ -191,7 +186,7 @@ export default function Navbar() {
                     <Github className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/sumitmandal47/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 text-slate-350 hover:text-white"

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ArrowUp, Github, Linkedin, Mail, Twitter } from 'lucide-react';
 
 export default function Footer() {
@@ -34,7 +34,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Nav Links */}
+
           <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-400">
             <a href="#home" onClick={(e) => { e.preventDefault(); document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' }); }} className="hover:text-white transition-colors">Home</a>
             <a href="#about" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }} className="hover:text-white transition-colors">About</a>
@@ -47,7 +47,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <div className="flex items-center space-x-3">
               <a
-                href="https://github.com"
+                href="https://github.com/sumitmandal47"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-slate-800/40 hover:bg-slate-80 border border-slate-700/50 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-all duration-350 hover:scale-105"
@@ -56,7 +56,7 @@ export default function Footer() {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/sumitmandal47/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-slate-800/40 hover:bg-slate-85 border border-slate-700/50 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-all duration-350 hover:scale-105"
@@ -65,14 +65,14 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="mailto:mandalsumit615@gmail.com"
                 className="w-10 h-10 rounded-xl bg-slate-800/40 hover:bg-slate-85 border border-slate-700/50 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-all duration-350 hover:scale-105"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
               </a>
             </div>
-            
+
             <button
               onClick={scrollToTop}
               className="w-10 h-10 rounded-xl bg-gradient-to-tr from-accent-cyan to-accent-violet hover:from-accent-pink hover:to-accent-violet text-white flex items-center justify-center shadow-lg shadow-accent-cyan/10 hover:shadow-accent-pink/20 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 active:translate-y-0"
